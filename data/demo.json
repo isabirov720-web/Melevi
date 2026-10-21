@@ -1,0 +1,627 @@
+{
+ "_note": "DEMO DATA — clearly labeled placeholder products. Remove from the admin panel (Резервная копия → Удалить демо-данные) before launch.",
+ "categories": [
+  {
+   "id": "a340dfd6-3962-503c-8141-ed8683af5b8e",
+   "slug": "demo-dresses",
+   "name": {
+    "ru": "Платья",
+    "en": "Dresses"
+   },
+   "position": 0,
+   "visible": true,
+   "isDemo": true
+  },
+  {
+   "id": "7350dc15-7144-549a-ac24-3cca6bf7b3bf",
+   "slug": "demo-outerwear",
+   "name": {
+    "ru": "Верхняя одежда",
+    "en": "Outerwear"
+   },
+   "position": 1,
+   "visible": true,
+   "isDemo": true
+  },
+  {
+   "id": "83133ca9-6165-5531-a87a-5de8bc4a8301",
+   "slug": "demo-suits",
+   "name": {
+    "ru": "Костюмы",
+    "en": "Suits"
+   },
+   "position": 2,
+   "visible": true,
+   "isDemo": true
+  },
+  {
+   "id": "af29f3d7-f757-5c50-9d0c-1570a49efdaa",
+   "slug": "demo-accessories",
+   "name": {
+    "ru": "Аксессуары",
+    "en": "Accessories"
+   },
+   "position": 3,
+   "visible": true,
+   "isDemo": true
+  }
+ ],
+ "products": [
+  {
+   "id": "1440d3b2-1886-574d-9abe-26c9d75468cb",
+   "slug": "demo-amira-dress",
+   "status": "published",
+   "categoryId": "a340dfd6-3962-503c-8141-ed8683af5b8e",
+   "name": {
+    "ru": "Демо: Платье «Амира»",
+    "en": "Demo: “Amira” dress"
+   },
+   "description": {
+    "ru": "Струящееся платье макси свободного силуэта с длинным рукавом.\n\nЭто демонстрационный товар. Удалите его в админ-панели перед запуском.",
+    "en": "Flowing maxi dress with a relaxed silhouette and long sleeves.\n\nThis is a demo product. Delete it in the admin panel before launch."
+   },
+   "price": 18900,
+   "compareAtPrice": null,
+   "colors": [
+    {
+     "id": "b14f33f0-d969-594f-95df-c876d2deba23",
+     "name": {
+      "ru": "Чёрный",
+      "en": "Black"
+     },
+     "hex": "#1b1a19"
+    },
+    {
+     "id": "33d2b728-2e44-52b1-a903-4cbb36e3f458",
+     "name": {
+      "ru": "Молочный",
+      "en": "Ivory"
+     },
+     "hex": "#efe9de"
+    }
+   ],
+   "sizes": [
+    {
+     "id": "7345175c-04c5-535c-8bed-97da4e03910f",
+     "label": "S"
+    },
+    {
+     "id": "685414bf-ab93-59f5-a223-cc3216cf33e9",
+     "label": "M"
+    },
+    {
+     "id": "8e4f7313-ba59-5ac1-bd57-dc5ae6d8ecca",
+     "label": "L"
+    },
+    {
+     "id": "a1548e0f-9781-51cb-b5c5-a1deaf44eb80",
+     "label": "XL"
+    }
+   ],
+   "variants": [
+    {
+     "id": "c2fb1e33-0141-5542-a9ad-592c579ae0ac",
+     "colorId": "b14f33f0-d969-594f-95df-c876d2deba23",
+     "sizeId": "7345175c-04c5-535c-8bed-97da4e03910f",
+     "stock": 3,
+     "price": null
+    },
+    {
+     "id": "8bb39f07-3ea6-5353-94b4-c1c709a1cc43",
+     "colorId": "b14f33f0-d969-594f-95df-c876d2deba23",
+     "sizeId": "685414bf-ab93-59f5-a223-cc3216cf33e9",
+     "stock": 5,
+     "price": null
+    },
+    {
+     "id": "cf235410-e1e9-5201-977b-2e3542c4a8b0",
+     "colorId": "b14f33f0-d969-594f-95df-c876d2deba23",
+     "sizeId": "8e4f7313-ba59-5ac1-bd57-dc5ae6d8ecca",
+     "stock": 0,
+     "price": null
+    },
+    {
+     "id": "004d87d2-ebdf-5f61-ab2e-28d52f2fd0d9",
+     "colorId": "b14f33f0-d969-594f-95df-c876d2deba23",
+     "sizeId": "a1548e0f-9781-51cb-b5c5-a1deaf44eb80",
+     "stock": 1,
+     "price": null
+    },
+    {
+     "id": "16509d43-de3d-57fd-bf73-b47aa1ced45a",
+     "colorId": "33d2b728-2e44-52b1-a903-4cbb36e3f458",
+     "sizeId": "7345175c-04c5-535c-8bed-97da4e03910f",
+     "stock": 0,
+     "price": null
+    },
+    {
+     "id": "8eab37e4-55ef-5ee0-a7b2-2ab6a72e318a",
+     "colorId": "33d2b728-2e44-52b1-a903-4cbb36e3f458",
+     "sizeId": "685414bf-ab93-59f5-a223-cc3216cf33e9",
+     "stock": 2,
+     "price": null
+    },
+    {
+     "id": "c595f9fe-1467-5e4a-a59f-69687fd4c964",
+     "colorId": "33d2b728-2e44-52b1-a903-4cbb36e3f458",
+     "sizeId": "8e4f7313-ba59-5ac1-bd57-dc5ae6d8ecca",
+     "stock": 2,
+     "price": null
+    },
+    {
+     "id": "f6604508-053b-5ebd-bb6f-a023290a4c52",
+     "colorId": "33d2b728-2e44-52b1-a903-4cbb36e3f458",
+     "sizeId": "a1548e0f-9781-51cb-b5c5-a1deaf44eb80",
+     "stock": 0,
+     "price": null
+    }
+   ],
+   "images": [
+    {
+     "id": "bce0e1c9-eb7e-589f-b4da-5d261a1f99dd",
+     "url": "/demo/dress-black.svg",
+     "path": null,
+     "colorId": "b14f33f0-d969-594f-95df-c876d2deba23"
+    },
+    {
+     "id": "7afcfa41-aaf7-589f-a1a0-f643319ece74",
+     "url": "/demo/dress-ivory.svg",
+     "path": null,
+     "colorId": "33d2b728-2e44-52b1-a903-4cbb36e3f458"
+    }
+   ],
+   "sizeChart": "Размер | Обхват груди, см | Обхват талии, см | Обхват бёдер, см\nS | 84–88 | 66–70 | 90–94\nM | 88–92 | 70–74 | 94–98\nL | 92–96 | 74–78 | 98–102\nXL | 96–100 | 78–82 | 102–106",
+   "isNew": true,
+   "isFeatured": true,
+   "isDemo": true,
+   "createdAt": "2026-10-19T09:00:00.000Z",
+   "updatedAt": "2026-10-19T09:00:00.000Z"
+  },
+  {
+   "id": "f1b4dca6-a7d0-57c5-9439-c0bb59ac629f",
+   "slug": "demo-leyla-coat",
+   "status": "published",
+   "categoryId": "7350dc15-7144-549a-ac24-3cca6bf7b3bf",
+   "name": {
+    "ru": "Демо: Пальто «Лейла»",
+    "en": "Demo: “Leyla” coat"
+   },
+   "description": {
+    "ru": "Удлинённое пальто прямого кроя.\n\nЭто демонстрационный товар. Удалите его в админ-панели перед запуском.",
+    "en": "Long straight-cut coat.\n\nThis is a demo product. Delete it in the admin panel before launch."
+   },
+   "price": 32000,
+   "compareAtPrice": 39000,
+   "colors": [
+    {
+     "id": "ad6ef6f7-43c0-599f-869b-d91bacd79f8f",
+     "name": {
+      "ru": "Кэмел",
+      "en": "Camel"
+     },
+     "hex": "#c19a6b"
+    },
+    {
+     "id": "a314e5ba-e1a2-53ae-8fb3-13f4b28dc04d",
+     "name": {
+      "ru": "Чёрный",
+      "en": "Black"
+     },
+     "hex": "#1b1a19"
+    }
+   ],
+   "sizes": [
+    {
+     "id": "9834c79f-1712-5a6b-9951-d2cf014f9416",
+     "label": "S"
+    },
+    {
+     "id": "e5c48eb2-43fe-595f-86ff-8a386c1e9aa7",
+     "label": "M"
+    },
+    {
+     "id": "aafc3753-b3e7-5c0a-bd7b-2454dae06026",
+     "label": "L"
+    }
+   ],
+   "variants": [
+    {
+     "id": "4300e427-028a-57c9-ba37-d14a153e04cd",
+     "colorId": "ad6ef6f7-43c0-599f-869b-d91bacd79f8f",
+     "sizeId": "9834c79f-1712-5a6b-9951-d2cf014f9416",
+     "stock": 2,
+     "price": null
+    },
+    {
+     "id": "a58f88db-ee0b-5f96-abc0-0c7739238d49",
+     "colorId": "ad6ef6f7-43c0-599f-869b-d91bacd79f8f",
+     "sizeId": "e5c48eb2-43fe-595f-86ff-8a386c1e9aa7",
+     "stock": 2,
+     "price": null
+    },
+    {
+     "id": "78536622-d1b2-5b0d-ac7a-bc419f85311e",
+     "colorId": "ad6ef6f7-43c0-599f-869b-d91bacd79f8f",
+     "sizeId": "aafc3753-b3e7-5c0a-bd7b-2454dae06026",
+     "stock": 1,
+     "price": null
+    },
+    {
+     "id": "3ed6c759-4725-5a03-8de0-d2cc44f73f97",
+     "colorId": "a314e5ba-e1a2-53ae-8fb3-13f4b28dc04d",
+     "sizeId": "9834c79f-1712-5a6b-9951-d2cf014f9416",
+     "stock": 2,
+     "price": null
+    },
+    {
+     "id": "bb5cc1b6-0dd9-59bd-a971-0b7692cc1d7a",
+     "colorId": "a314e5ba-e1a2-53ae-8fb3-13f4b28dc04d",
+     "sizeId": "e5c48eb2-43fe-595f-86ff-8a386c1e9aa7",
+     "stock": 2,
+     "price": null
+    },
+    {
+     "id": "ff44896d-06e1-589e-b27c-7c3a5190ee35",
+     "colorId": "a314e5ba-e1a2-53ae-8fb3-13f4b28dc04d",
+     "sizeId": "aafc3753-b3e7-5c0a-bd7b-2454dae06026",
+     "stock": 0,
+     "price": null
+    }
+   ],
+   "images": [
+    {
+     "id": "a4446666-af0f-53e7-bf29-6a95b3976293",
+     "url": "/demo/coat-camel.svg",
+     "path": null,
+     "colorId": "ad6ef6f7-43c0-599f-869b-d91bacd79f8f"
+    },
+    {
+     "id": "85ac5e2a-be15-5eaa-aeec-ce5a833f734e",
+     "url": "/demo/coat-black.svg",
+     "path": null,
+     "colorId": "a314e5ba-e1a2-53ae-8fb3-13f4b28dc04d"
+    }
+   ],
+   "sizeChart": "Размер | Обхват груди, см | Обхват талии, см | Обхват бёдер, см\nS | 84–88 | 66–70 | 90–94\nM | 88–92 | 70–74 | 94–98\nL | 92–96 | 74–78 | 98–102\nXL | 96–100 | 78–82 | 102–106",
+   "isNew": false,
+   "isFeatured": true,
+   "isDemo": true,
+   "createdAt": "2026-10-14T09:00:00.000Z",
+   "updatedAt": "2026-10-14T09:00:00.000Z"
+  },
+  {
+   "id": "c3296735-ea25-5911-8842-5a4bbe14a75a",
+   "slug": "demo-safiya-suit",
+   "status": "published",
+   "categoryId": "83133ca9-6165-5531-a87a-5de8bc4a8301",
+   "name": {
+    "ru": "Демо: Костюм «Сафия»",
+    "en": "Demo: “Safiya” suit"
+   },
+   "description": {
+    "ru": "Костюм из жакета свободного кроя и широких брюк.\n\nЭто демонстрационный товар. Удалите его в админ-панели перед запуском.",
+    "en": "Relaxed-fit jacket with wide-leg trousers.\n\nThis is a demo product. Delete it in the admin panel before launch."
+   },
+   "price": 26000,
+   "compareAtPrice": null,
+   "colors": [
+    {
+     "id": "07c124e4-a89a-58b6-99b2-bbe2dd51294c",
+     "name": {
+      "ru": "Графит",
+      "en": "Graphite"
+     },
+     "hex": "#5f6266"
+    }
+   ],
+   "sizes": [
+    {
+     "id": "c55e0bc4-a0b9-5a4f-aa60-39345b586466",
+     "label": "S"
+    },
+    {
+     "id": "88e6f44e-4c2e-525c-9ed0-72d91a98544b",
+     "label": "M"
+    },
+    {
+     "id": "7d259ab2-01ea-561d-a6e1-c29719b6ce00",
+     "label": "L"
+    },
+    {
+     "id": "db060f3d-1557-5d99-9253-8d9de4e87630",
+     "label": "XL"
+    }
+   ],
+   "variants": [
+    {
+     "id": "0cdee39f-f7c4-578b-83d9-f374a5d0c3b2",
+     "colorId": "07c124e4-a89a-58b6-99b2-bbe2dd51294c",
+     "sizeId": "c55e0bc4-a0b9-5a4f-aa60-39345b586466",
+     "stock": 1,
+     "price": null
+    },
+    {
+     "id": "2e143797-cce6-535c-b67d-86417dafe0cd",
+     "colorId": "07c124e4-a89a-58b6-99b2-bbe2dd51294c",
+     "sizeId": "88e6f44e-4c2e-525c-9ed0-72d91a98544b",
+     "stock": 3,
+     "price": null
+    },
+    {
+     "id": "082bd5ca-edcd-51d6-880c-732e2f23e207",
+     "colorId": "07c124e4-a89a-58b6-99b2-bbe2dd51294c",
+     "sizeId": "7d259ab2-01ea-561d-a6e1-c29719b6ce00",
+     "stock": 3,
+     "price": null
+    },
+    {
+     "id": "8f81dc9d-5294-5177-a458-bbc563c4a561",
+     "colorId": "07c124e4-a89a-58b6-99b2-bbe2dd51294c",
+     "sizeId": "db060f3d-1557-5d99-9253-8d9de4e87630",
+     "stock": 0,
+     "price": null
+    }
+   ],
+   "images": [
+    {
+     "id": "bea8be01-cc37-5453-a77e-dedea3a684b7",
+     "url": "/demo/suit-graphite.svg",
+     "path": null,
+     "colorId": "07c124e4-a89a-58b6-99b2-bbe2dd51294c"
+    }
+   ],
+   "sizeChart": "Размер | Обхват груди, см | Обхват талии, см | Обхват бёдер, см\nS | 84–88 | 66–70 | 90–94\nM | 88–92 | 70–74 | 94–98\nL | 92–96 | 74–78 | 98–102\nXL | 96–100 | 78–82 | 102–106",
+   "isNew": true,
+   "isFeatured": true,
+   "isDemo": true,
+   "createdAt": "2026-10-18T09:00:00.000Z",
+   "updatedAt": "2026-10-18T09:00:00.000Z"
+  },
+  {
+   "id": "c727b4e2-b2cd-5a91-9769-ca6fd3b2163a",
+   "slug": "demo-nur-scarf",
+   "status": "published",
+   "categoryId": "af29f3d7-f757-5c50-9d0c-1570a49efdaa",
+   "name": {
+    "ru": "Демо: Платок «Нур»",
+    "en": "Demo: “Nur” scarf"
+   },
+   "description": {
+    "ru": "Лёгкий платок, три оттенка.\n\nЭто демонстрационный товар. Удалите его в админ-панели перед запуском.",
+    "en": "Lightweight scarf in three shades.\n\nThis is a demo product. Delete it in the admin panel before launch."
+   },
+   "price": 4500,
+   "compareAtPrice": null,
+   "colors": [
+    {
+     "id": "2c16c33b-0604-5fdd-bbbd-33849606f882",
+     "name": {
+      "ru": "Песочный",
+      "en": "Sand"
+     },
+     "hex": "#d8c5a6"
+    },
+    {
+     "id": "91942bf1-2ede-5659-bb70-298450b3199c",
+     "name": {
+      "ru": "Чёрный",
+      "en": "Black"
+     },
+     "hex": "#1b1a19"
+    },
+    {
+     "id": "26e26f02-3a0c-53de-a166-6dab12728db6",
+     "name": {
+      "ru": "Оливковый",
+      "en": "Olive"
+     },
+     "hex": "#7c7d5c"
+    }
+   ],
+   "sizes": [],
+   "variants": [
+    {
+     "id": "8adb001b-0006-528f-b2be-07c0fdcf18d6",
+     "colorId": "2c16c33b-0604-5fdd-bbbd-33849606f882",
+     "sizeId": null,
+     "stock": 10,
+     "price": null
+    },
+    {
+     "id": "013f4a35-8915-5499-a29b-2161bc1ac57f",
+     "colorId": "91942bf1-2ede-5659-bb70-298450b3199c",
+     "sizeId": null,
+     "stock": 0,
+     "price": null
+    },
+    {
+     "id": "ac88280b-aae5-56cd-b0b6-5297d79db146",
+     "colorId": "26e26f02-3a0c-53de-a166-6dab12728db6",
+     "sizeId": null,
+     "stock": 4,
+     "price": null
+    }
+   ],
+   "images": [
+    {
+     "id": "cbf986a3-9c1b-5ba1-99ed-6ac0067ccedc",
+     "url": "/demo/scarf-sand.svg",
+     "path": null,
+     "colorId": "2c16c33b-0604-5fdd-bbbd-33849606f882"
+    },
+    {
+     "id": "0e04428c-46a0-56d8-afd5-95a25779c60b",
+     "url": "/demo/scarf-black.svg",
+     "path": null,
+     "colorId": "91942bf1-2ede-5659-bb70-298450b3199c"
+    },
+    {
+     "id": "66edd87a-a934-5865-b53b-d972b1e4add8",
+     "url": "/demo/scarf-olive.svg",
+     "path": null,
+     "colorId": "26e26f02-3a0c-53de-a166-6dab12728db6"
+    }
+   ],
+   "sizeChart": "",
+   "isNew": false,
+   "isFeatured": false,
+   "isDemo": true,
+   "createdAt": "2026-10-12T09:00:00.000Z",
+   "updatedAt": "2026-10-12T09:00:00.000Z"
+  },
+  {
+   "id": "feacbe65-cb2d-512f-8264-930fb9dd29dc",
+   "slug": "demo-aisha-shirtdress",
+   "status": "published",
+   "categoryId": "a340dfd6-3962-503c-8141-ed8683af5b8e",
+   "name": {
+    "ru": "Демо: Платье-рубашка «Айша»",
+    "en": "Demo: “Aisha” shirt dress"
+   },
+   "description": {
+    "ru": "Платье-рубашка на пуговицах с поясом.\n\nЭто демонстрационный товар. Удалите его в админ-панели перед запуском.",
+    "en": "Button-front shirt dress with a belt.\n\nThis is a demo product. Delete it in the admin panel before launch."
+   },
+   "price": 14900,
+   "compareAtPrice": null,
+   "colors": [
+    {
+     "id": "a8b38a33-bb9a-519f-845e-c71b581f47b4",
+     "name": {
+      "ru": "Белый",
+      "en": "White"
+     },
+     "hex": "#f6f5f1"
+    }
+   ],
+   "sizes": [
+    {
+     "id": "d3e8077d-39bc-5c6d-9c38-8e519318f22e",
+     "label": "S"
+    },
+    {
+     "id": "44959e4a-1cde-5b92-b777-fbd5661bb4b1",
+     "label": "M"
+    },
+    {
+     "id": "907f0704-aacb-5aa8-aac5-6768773ae132",
+     "label": "L"
+    }
+   ],
+   "variants": [
+    {
+     "id": "4a66273d-b5fa-5099-b1c2-35a6f07e70be",
+     "colorId": "a8b38a33-bb9a-519f-845e-c71b581f47b4",
+     "sizeId": "d3e8077d-39bc-5c6d-9c38-8e519318f22e",
+     "stock": 0,
+     "price": null
+    },
+    {
+     "id": "f2ba2237-f236-504e-a01a-1f025b95aa15",
+     "colorId": "a8b38a33-bb9a-519f-845e-c71b581f47b4",
+     "sizeId": "44959e4a-1cde-5b92-b777-fbd5661bb4b1",
+     "stock": 0,
+     "price": null
+    },
+    {
+     "id": "f54ef53f-31a3-5195-97bc-961f7870d9a3",
+     "colorId": "a8b38a33-bb9a-519f-845e-c71b581f47b4",
+     "sizeId": "907f0704-aacb-5aa8-aac5-6768773ae132",
+     "stock": 0,
+     "price": null
+    }
+   ],
+   "images": [
+    {
+     "id": "4c27e5a6-0020-5791-84a2-8df3c77f0774",
+     "url": "/demo/shirtdress-white.svg",
+     "path": null,
+     "colorId": "a8b38a33-bb9a-519f-845e-c71b581f47b4"
+    }
+   ],
+   "sizeChart": "Размер | Обхват груди, см | Обхват талии, см | Обхват бёдер, см\nS | 84–88 | 66–70 | 90–94\nM | 88–92 | 70–74 | 94–98\nL | 92–96 | 74–78 | 98–102\nXL | 96–100 | 78–82 | 102–106",
+   "isNew": false,
+   "isFeatured": false,
+   "isDemo": true,
+   "createdAt": "2026-10-08T09:00:00.000Z",
+   "updatedAt": "2026-10-08T09:00:00.000Z"
+  },
+  {
+   "id": "6da8820a-f2da-59f7-9924-f1ab4b829b74",
+   "slug": "demo-zeynep-trench",
+   "status": "published",
+   "categoryId": "7350dc15-7144-549a-ac24-3cca6bf7b3bf",
+   "name": {
+    "ru": "Демо: Тренч «Зейнеп»",
+    "en": "Demo: “Zeynep” trench"
+   },
+   "description": {
+    "ru": "Классический тренч с поясом.\n\nЭто демонстрационный товар. Удалите его в админ-панели перед запуском.",
+    "en": "Classic belted trench coat.\n\nThis is a demo product. Delete it in the admin panel before launch."
+   },
+   "price": 24000,
+   "compareAtPrice": null,
+   "colors": [
+    {
+     "id": "59401ae6-3934-5ea8-b968-365310c56ed5",
+     "name": {
+      "ru": "Бежевый",
+      "en": "Beige"
+     },
+     "hex": "#d6c6aa"
+    }
+   ],
+   "sizes": [
+    {
+     "id": "41661004-ff4b-59e8-8482-a4a69a11527c",
+     "label": "S"
+    },
+    {
+     "id": "41fe2adb-e5b5-5844-853c-a9d418a3dadd",
+     "label": "M"
+    },
+    {
+     "id": "26717be2-6e74-5291-89fa-13ad7f1c1ab1",
+     "label": "L"
+    }
+   ],
+   "variants": [
+    {
+     "id": "25fb4562-aacb-5f64-8260-0bd4aee51701",
+     "colorId": "59401ae6-3934-5ea8-b968-365310c56ed5",
+     "sizeId": "41661004-ff4b-59e8-8482-a4a69a11527c",
+     "stock": 2,
+     "price": null
+    },
+    {
+     "id": "583ce9a0-bfb8-5c7e-827c-c01971a1eac6",
+     "colorId": "59401ae6-3934-5ea8-b968-365310c56ed5",
+     "sizeId": "41fe2adb-e5b5-5844-853c-a9d418a3dadd",
+     "stock": 2,
+     "price": null
+    },
+    {
+     "id": "40f23153-146f-5174-9d35-c8cb4e0bfa5e",
+     "colorId": "59401ae6-3934-5ea8-b968-365310c56ed5",
+     "sizeId": "26717be2-6e74-5291-89fa-13ad7f1c1ab1",
+     "stock": 2,
+     "price": null
+    }
+   ],
+   "images": [
+    {
+     "id": "a9207651-1c04-5d58-b8d1-d684afe292e1",
+     "url": "/demo/trench-beige.svg",
+     "path": null,
+     "colorId": "59401ae6-3934-5ea8-b968-365310c56ed5"
+    }
+   ],
+   "sizeChart": "Размер | Обхват груди, см | Обхват талии, см | Обхват бёдер, см\nS | 84–88 | 66–70 | 90–94\nM | 88–92 | 70–74 | 94–98\nL | 92–96 | 74–78 | 98–102\nXL | 96–100 | 78–82 | 102–106",
+   "isNew": true,
+   "isFeatured": false,
+   "isDemo": true,
+   "createdAt": "2026-10-20T09:00:00.000Z",
+   "updatedAt": "2026-10-20T09:00:00.000Z"
+  }
+ ]
+}
