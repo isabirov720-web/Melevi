@@ -1,11 +1,14 @@
 import type { NextConfig } from "next";
 
-const supabaseHost = process.env.NEXT_PUBLIC_SUPABASE_URL ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).hostname : null;
+// Photo host for next/image. Read at build time; falls back to the store's Supabase project so
+// photos still work if the hosting build forgets NEXT_PUBLIC_SUPABASE_URL (the URL is public anyway).
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://ahhzcobkkfpqseulxftx.supabase.co";
+const supabaseHost = new URL(SUPABASE_URL).hostname;
 
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
-    remotePatterns: supabaseHost ? [{ protocol: "https", hostname: supabaseHost, pathname: "/storage/v1/object/public/**" }] : [],
+    remotePatterns: [{ protocol: "https", hostname: supabaseHost, pathname: "/storage/v1/object/public/**" }],
   },
   poweredByHeader: false,
   async headers() {
