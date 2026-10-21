@@ -5,6 +5,15 @@
 	"name": "melevi",
 	"compatibility_date": "2026-10-19",
 	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	// Public settings, available to the Worker at runtime. Kept here (not in the dashboard)
+	// because each `wrangler deploy` replaces dashboard text variables with this file's values.
+	// Only PUBLIC values belong here: the publishable key is designed to be visible and the
+	// database is protected by Row-Level Security. Never put the secret/service_role key here.
+	"vars": {
+		"NEXT_PUBLIC_SUPABASE_URL": "https://ahhzcobkkfpqseulxftx.supabase.co",
+		"NEXT_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_jjSf5gjuntrVxKrlIgLiJA_BEGOPXj_",
+		"NEXT_PUBLIC_SITE_URL": "https://melevi.isabirov720.workers.dev"
+	},
 	"assets": {
 		"directory": ".open-next/assets",
 		"binding": "ASSETS"
