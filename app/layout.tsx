@@ -39,7 +39,7 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const locale = await getLocale().catch(() => "ru" as const);
   return (
-    <html lang={locale} className={`${display.variable} ${sans.variable}`}>
+    <html lang={locale} className={`${display.variable} ${sans.variable}`} data-scroll-behavior="smooth">
       <body>{children}</body>
     </html>
   );

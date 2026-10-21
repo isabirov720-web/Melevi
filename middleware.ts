@@ -1,5 +1,8 @@
 // Keeps the owner's Supabase session fresh on admin pages. Authorization itself is
 // checked on the server for every admin page and API request (lib/auth.ts).
+//
+// Stays as Edge `middleware.ts` instead of Next.js 16 `proxy.ts`: proxy always runs on the
+// Node.js runtime, which Cloudflare Workers (OpenNext) doesn't officially support yet.
 import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 

@@ -4,9 +4,13 @@ import { createLocalRepo } from "./local";
 import { createSupabaseRepo } from "./supabase";
 import { RepoError, type ReadRepo } from "./types";
 
+/** Serverless hosts (Vercel, Cloudflare Workers) have no persistent disk, so local mode can't work there. */
+const onServerlessHost = () =>
+  !!process.env.VERCEL || (typeof navigator !== "undefined" && navigator.userAgent === "Cloudflare-Workers");
+
 export function backendMode(): "local" | "supabase" {
   if (isSupabaseConfigured()) return "supabase";
-  if (process.env.VERCEL)
+  if (onServerlessHost())
     throw new RepoError(
       "База данных не подключена: задайте NEXT_PUBLIC_SUPABASE_URL и NEXT_PUBLIC_SUPABASE_ANON_KEY в настройках хостинга.",
       500,

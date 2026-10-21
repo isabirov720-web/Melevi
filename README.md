@@ -7,7 +7,7 @@ A clothing catalog for the MELEVI Instagram store. Customers browse products, ch
 ## How it works
 
 ```
-Customer's phone ──► Next.js website (Vercel) ──► Supabase
+Customer's phone ──► Next.js website (Cloudflare Workers) ──► Supabase
                       • storefront pages             • Postgres database (products, categories, settings)
                       • /admin panel                  • Storage bucket "media" (photos)
                       • API routes (validation)       • Auth (owner login) + Row-Level Security
@@ -15,14 +15,14 @@ Cart ──► stays in the customer's browser (localStorage) — no personal da
 Order request ──► customer sends it themselves in WhatsApp / Instagram Direct
 ```
 
-- **Next.js 15 + TypeScript**: the website and admin panel. Pages are rendered on the server for every request, so price changes show up immediately.
+- **Next.js 16 + TypeScript**, deployed to **Cloudflare Workers** with the OpenNext adapter (`@opennextjs/cloudflare`): the website and admin panel. Pages are rendered on the server for every request, so price changes show up immediately.
 - **Supabase**: the database, photo storage and owner login. **Row-Level Security** rules in the database mean:
   - anyone can read only *published* products in *visible* categories;
   - only users listed in the `admins` table can change products, categories, settings or photos.
 - **All admin saves go through server API routes** (`app/api/admin/*`). They check the owner session, the request origin, and the data itself (Zod schemas in `lib/schema.ts`: prices, stock, sizes, URLs). Uploads are checked by file type (by content, not just the name) and by size (max 5 MB). Photos are also resized in the browser before upload.
 - **Two backends with the same code** (`lib/repo/`):
   - `supabase`: production. Used automatically when the Supabase env variables are set.
-  - `local`: development/demo. Stores data in `.data/db.json` and photos in `.data/uploads/`, with a password-only login. It's shared by everyone using that server, but **it can't be used on Vercel** (Vercel disks are temporary). The site refuses to start in this mode on Vercel.
+  - `local`: development/demo. Stores data in `.data/db.json` and photos in `.data/uploads/`, with a password-only login. It's shared by everyone using that server, but **it can't be used on Cloudflare Workers or Vercel** (no persistent disk). The site refuses to start in this mode there.
 
 ## Project structure
 
@@ -86,27 +86,40 @@ npm run e2e                    # in another: owner/customer scenarios against th
 6. **Project Settings → API**: copy the **Project URL** and the **anon / publishable** key.
 7. Optional: to load the demo catalog, run this on your computer:
    `SUPABASE_URL=… SUPABASE_SERVICE_ROLE_KEY=… npm run seed:supabase`
-   The service key is a full-access secret. Use it only in this one command, and never put it in Vercel or a `.env` file you share.
+   The service key is a full-access secret. Use it only in this one command, and never put it in Cloudflare or a `.env` file you share.
 
-### 2. Deploy on Vercel
+### 2. Deploy on Cloudflare Workers (auto-deploy from GitHub)
 
-1. Put this folder in a GitHub repository (private is fine).
-2. At <https://vercel.com> click **Add New → Project** and import the repository. The framework is detected as Next.js.
-3. Under **Environment Variables**, add:
+The adapter config lives in `wrangler.jsonc` (Worker name `melevi`) and `open-next.config.ts`.
+
+1. Cloudflare dashboard → **Workers & Pages → Create → Import a repository**, then pick `isabirov720-web/Melevi`, branch `master`.
+2. Build settings:
+   - **Build command:** `npx opennextjs-cloudflare build`
+   - **Deploy command:** `npx opennextjs-cloudflare deploy`
+   - **Non-production branch deploy command:** `npx opennextjs-cloudflare upload`
+   - **Root directory:** `/`
+3. **Build variables** (Settings → Build → Variables and secrets). They're needed at *build* time because `NEXT_PUBLIC_*` values are baked into the code:
    - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-   - `NEXT_PUBLIC_SITE_URL` (for example `https://melevi.kg`; use the `*.vercel.app` address until you have a domain)
-4. Click **Deploy**. Then open `/admin` and sign in with the owner email and password.
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY` (the public anon/publishable key, never the secret key)
+   - `NEXT_PUBLIC_SITE_URL` (for example `https://melevi.<account>.workers.dev`, later your domain)
+4. Add the same three as **runtime variables** (Settings → Variables and secrets, type *Text*).
+5. Save and deploy. Every push to `master` then deploys automatically.
+
+Local checks before pushing:
+
+```bash
+npm run build      # Next.js build
+npm run preview    # build for Workers and run it locally in workerd at http://localhost:8787
+```
 
 Changes saved in the admin panel live in Supabase, so they survive page reloads and redeployments and are visible to every customer.
 
 ### 3. Custom domain
 
-1. Buy a domain (for example a `.kg` from a Kyrgyz registrar, or `.com` from any registrar).
-2. In Vercel: **Project → Settings → Domains → Add**, then enter the domain.
-3. At your registrar, add the DNS records Vercel shows (usually an `A` record `76.76.21.21` for the bare domain and a `CNAME` `cname.vercel-dns.com` for `www`). HTTPS is set up automatically.
-4. Update `NEXT_PUBLIC_SITE_URL` to the new domain and **Redeploy**.
-5. Put the link in the Instagram bio.
+1. Add the domain to Cloudflare (**Websites → Add a site**) and switch the registrar's nameservers to the two Cloudflare shows.
+2. Worker `melevi` → **Settings → Domains & Routes → Add → Custom domain**, then enter `melevi.kg` (and `www.melevi.kg`). HTTPS is set up automatically.
+3. Update `NEXT_PUBLIC_SITE_URL` (build and runtime variables) to the new domain and redeploy.
+4. Put the link in the Instagram bio.
 
 ## Backup and export
 
@@ -124,10 +137,10 @@ Every demo product and category is marked `isDemo` and shows a yellow **«Дем
 
 | Feature | Status | What's needed |
 |---|---|---|
-| Supabase database, photo storage, owner login | Code and migration are ready. **Not tested against a live Supabase project**, because none exists yet | Steps 1–2 above |
+| Supabase database, photo storage, owner login | Connected; migration applied; public access checks pass (`npm run check:supabase`) | — |
 | WhatsApp order requests | Built; the button stays hidden until a number is entered | **Сайт → Контакты → WhatsApp** |
 | Instagram order requests | Working: copies the request text and opens `ig.me/m/melevi.official` (Instagram Direct) | — |
 | Phone, email, address, exchange and return policies | Empty: nothing has been made up | Fill in under **Сайт** |
 | Real logo, banner and product photos | Text logo and labeled DEMO placeholders for now | Upload in the admin panel |
 | Online payment | Not part of version 1 | Could be added later (e.g. a local payment provider) |
-| Production hosting and domain | Not deployed | Steps 2–3 above |
+| Production hosting and domain | Configured for Cloudflare Workers, not yet deployed | Steps 2–3 above |

@@ -33,7 +33,7 @@ export async function supabaseWithSession() {
         try {
           list.forEach(({ name, value, options }) => store.set(name, value, options));
         } catch {
-          // Called from a Server Component: cookies are refreshed by middleware instead.
+          // Called from a Server Component: cookies are refreshed by middleware.ts instead.
         }
       },
     },

@@ -15,7 +15,8 @@ interface Db {
   products: Product[];
 }
 
-export const DATA_DIR = path.resolve(process.env.LOCAL_DATA_DIR || ".data");
+// Local mode only; turbopackIgnore keeps this dynamic path from pulling the whole project into the server bundle.
+export const DATA_DIR = path.resolve(/*turbopackIgnore: true*/ process.env.LOCAL_DATA_DIR || ".data");
 const DB_FILE = path.join(DATA_DIR, "db.json");
 export const UPLOAD_DIR = path.join(DATA_DIR, "uploads");
 
