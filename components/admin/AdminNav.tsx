@@ -22,7 +22,7 @@ export function AdminNav({ email }: { email: string | null }) {
   return (
     <>
       <header className="a-top">
-        <Link href="/admin/products" className="a-brand">MELEVI <span>админ</span></Link>
+        <Link href="/admin/products" className="a-brand">MELEVI <span>админка</span></Link>
         <nav className="a-nav-desktop" aria-label="Разделы">
           {LINKS.map((l) => (
             <Link key={l.href} href={l.href} aria-current={pathname.startsWith(l.href) ? "page" : undefined}>{l.label}</Link>
