@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useStore } from "./StoreProvider";
 import { BagIcon, CloseIcon, MenuIcon } from "./Icons";
 import type { Locale } from "@/lib/types";
@@ -39,7 +40,10 @@ export function LangSwitch({ locales }: { locales: Locale[] }) {
 export function MobileMenu({ categories }: { categories: { slug: string; name: string }[] }) {
   const { t } = useStore();
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => setMounted(true), []);
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => setOpen(false), [pathname]);
@@ -60,6 +64,9 @@ export function MobileMenu({ categories }: { categories: { slug: string; name: s
       <button type="button" className="icon-btn menu-btn" aria-label={t("nav.menu")} aria-expanded={open} onClick={() => setOpen(true)}>
         <MenuIcon />
       </button>
+      {/* Rendered at <body> level: inside the header (backdrop-filter, sticky) iOS Safari
+          could paint the hero banner above the menu. */}
+      {mounted && createPortal(<>
       <div className={`drawer-backdrop ${open ? "open" : ""}`} onClick={() => setOpen(false)} aria-hidden />
       <nav className={`drawer drawer-left ${open ? "open" : ""}`} aria-label={t("nav.menu")} aria-hidden={!open} inert={!open}>
         <div className="drawer-head">
@@ -79,6 +86,7 @@ export function MobileMenu({ categories }: { categories: { slug: string; name: s
           <li><Link href="/cart">{t("nav.cart")}</Link></li>
         </ul>
       </nav>
+      </>, document.body)}
     </>
   );
 }
